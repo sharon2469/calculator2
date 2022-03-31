@@ -209,8 +209,15 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         updateResult();
     }
 
+    /*This function update the result textview*/
     private void updateResult() {
-        txtResult.setText(String.format(Locale.getDefault(), "%." + resultForamt + "f", lastResult));
+        try {
+            int operand1 = Integer.parseInt(edNum1.getText().toString());
+            int operand2 = Integer.parseInt(edNum2.getText().toString());
+            txtResult.setText(String.format(Locale.getDefault(), "%." + resultForamt + "f", lastResult));
+        } catch (NumberFormatException e) {
+            txtResult.setText("");
+        }
     }
 
     /*This is Member Class method -> implements TextWatcher*/
