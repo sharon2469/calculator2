@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             public void onClick(View view) {
                 clearEditTexts();
                 clearResultField();
-                //setResultTextView(DEFAULT_RESULT);
             }
         });
 
@@ -65,11 +64,14 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         /*************************** Inflate **************************/
         /********************* The manually method *******************/
 
+        //need to ask
         ViewGroup mainLayout = (ViewGroup)findViewById(R.id.main_layout);  //get reference to the MAIN layout container the ROOT
+
+
         LinearLayout linearLayout=findViewById(R.id.linearLayout); //get reference to the secondary container that hold all components (button/edittext and etc).
 
         //get reference to the seek bar component and
-        View child = (LinearLayout) getLayoutInflater().inflate(R.layout.seek_bar_sub_layout, mainLayout, false); //mainLayout is the parent(ROOT)
+        View child = (LinearLayout) getLayoutInflater().inflate(R.layout.seek_bar_sub_layout, linearLayout, false); //mainLayout is the parent(ROOT)
         //*** If attachToRoot is true, it will become the inflated view's parent view.
 
         //add attributes to the seek element
