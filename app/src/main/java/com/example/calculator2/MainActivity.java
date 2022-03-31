@@ -230,10 +230,13 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         /**This function handle the action when the text change in the editText (we do it with the listener)*/
         @Override
         public void afterTextChanged(Editable s) {
-            setAllButtonsEnabled(true);
             //check if the second editText is zero
             try {
-                int operand2 = Integer.parseInt(s.toString());
+                int operand1 = Integer.parseInt(edNum1.getText().toString());
+                int operand2 = Integer.parseInt(edNum2.getText().toString());
+                setAllButtonsEnabled(true);
+
+                //int operand2 = Integer.parseInt(s.toString());
                 btDiv.setEnabled(operand2 != 0); //check if the second editText is zero
             } catch (NumberFormatException e) {
                 setAllButtonsEnabled(false);
